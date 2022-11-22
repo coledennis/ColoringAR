@@ -8,7 +8,6 @@
 import Foundation
 import RealityKit
 
-
 class ARViewModel: ObservableObject {
     @Published private var model : ARModel = ARModel()
     
@@ -16,4 +15,7 @@ class ARViewModel: ObservableObject {
         model.arView
     }
     
+    func raycast(location: CGPoint) {
+        model.raycasting(location: location)
+    }
 }

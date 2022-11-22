@@ -14,6 +14,7 @@
 		B4CF1741292AFB4300D492D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CF1740292AFB4300D492D7 /* Preview Assets.xcassets */; };
 		B4CF1748292AFB9900D492D7 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1747292AFB9900D492D7 /* ARModel.swift */; };
 		B4CF174A292AFB9F00D492D7 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1749292AFB9F00D492D7 /* ARViewModel.swift */; };
+		B4CF174C292B1AEA00D492D7 /* BoxData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF174B292B1AEA00D492D7 /* BoxData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B4CF1740292AFB4300D492D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4CF1747292AFB9900D492D7 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		B4CF1749292AFB9F00D492D7 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		B4CF174B292B1AEA00D492D7 /* BoxData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,9 @@
 			children = (
 				B4CF1737292AFB4300D492D7 /* AppDelegate.swift */,
 				B4CF1739292AFB4300D492D7 /* ContentView.swift */,
-				B4CF1747292AFB9900D492D7 /* ARModel.swift */,
 				B4CF1749292AFB9F00D492D7 /* ARViewModel.swift */,
+				B4CF1747292AFB9900D492D7 /* ARModel.swift */,
+				B4CF174B292B1AEA00D492D7 /* BoxData.swift */,
 				B4CF173B292AFB4300D492D7 /* Experience.rcproject */,
 				B4CF173D292AFB4300D492D7 /* Assets.xcassets */,
 				B4CF173F292AFB4300D492D7 /* Preview Content */,
@@ -151,6 +154,7 @@
 				B4CF173A292AFB4300D492D7 /* ContentView.swift in Sources */,
 				B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */,
 				B4CF173C292AFB4300D492D7 /* Experience.rcproject in Sources */,
+				B4CF174C292B1AEA00D492D7 /* BoxData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
