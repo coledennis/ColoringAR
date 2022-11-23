@@ -11,10 +11,11 @@ import RealityKit
 struct ContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
     var body: some View {
-        ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
-            .onTapGesture(coordinateSpace: .global) { location in
-                arViewModel.raycast(location: location)
-            }
+        TitleScreenView()
+//        ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
+//            .onTapGesture(coordinateSpace: .global) { location in
+//                arViewModel.raycast(location: location)
+//            }
     }
     
 }

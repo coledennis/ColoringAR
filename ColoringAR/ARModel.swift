@@ -57,6 +57,7 @@ struct ARModel {
             box.transform.translation.x = Float(item.x)
             box.transform.translation.y = Float(item.y)
             box.transform.translation.z = Float(item.z)
+//            box.move(to: , relativeTo: <#T##Entity?#>, duration: <#T##TimeInterval#>, timingFunction: .)
             array.append(box)
         }
         

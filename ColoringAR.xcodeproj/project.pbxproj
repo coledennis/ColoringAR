@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B47835DC292DAF71007CCF06 /* StageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47835DB292DAF71007CCF06 /* StageSelectionView.swift */; };
+		B48A0A4A292D0D6700ABDB50 /* TitleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */; };
+		B48A0A4C292D0DB300ABDB50 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A0A4B292D0DB300ABDB50 /* GameData.swift */; };
 		B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1737292AFB4300D492D7 /* AppDelegate.swift */; };
 		B4CF173A292AFB4300D492D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1739292AFB4300D492D7 /* ContentView.swift */; };
 		B4CF173C292AFB4300D492D7 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = B4CF173B292AFB4300D492D7 /* Experience.rcproject */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B47835DB292DAF71007CCF06 /* StageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelectionView.swift; sourceTree = "<group>"; };
+		B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenView.swift; sourceTree = "<group>"; };
+		B48A0A4B292D0DB300ABDB50 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		B4CF1734292AFB4300D492D7 /* ColoringAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColoringAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CF1737292AFB4300D492D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4CF1739292AFB4300D492D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,9 +67,12 @@
 			children = (
 				B4CF1737292AFB4300D492D7 /* AppDelegate.swift */,
 				B4CF1739292AFB4300D492D7 /* ContentView.swift */,
+				B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */,
+				B47835DB292DAF71007CCF06 /* StageSelectionView.swift */,
 				B4CF1749292AFB9F00D492D7 /* ARViewModel.swift */,
 				B4CF1747292AFB9900D492D7 /* ARModel.swift */,
 				B4CF174B292B1AEA00D492D7 /* BoxData.swift */,
+				B48A0A4B292D0DB300ABDB50 /* GameData.swift */,
 				B4CF173B292AFB4300D492D7 /* Experience.rcproject */,
 				B4CF173D292AFB4300D492D7 /* Assets.xcassets */,
 				B4CF173F292AFB4300D492D7 /* Preview Content */,
@@ -149,10 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B48A0A4A292D0D6700ABDB50 /* TitleScreenView.swift in Sources */,
 				B4CF174A292AFB9F00D492D7 /* ARViewModel.swift in Sources */,
 				B4CF1748292AFB9900D492D7 /* ARModel.swift in Sources */,
 				B4CF173A292AFB4300D492D7 /* ContentView.swift in Sources */,
+				B47835DC292DAF71007CCF06 /* StageSelectionView.swift in Sources */,
 				B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */,
+				B48A0A4C292D0DB300ABDB50 /* GameData.swift in Sources */,
 				B4CF173C292AFB4300D492D7 /* Experience.rcproject in Sources */,
 				B4CF174C292B1AEA00D492D7 /* BoxData.swift in Sources */,
 			);
@@ -300,6 +312,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dictionAR.ColoringAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,6 +346,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dictionAR.ColoringAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
