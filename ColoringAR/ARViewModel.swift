@@ -15,6 +15,14 @@ class ARViewModel: ObservableObject {
         model.arView
     }
     
+    var currentGameStage: GameStage {
+        model.gameStageVar
+    }
+    
+    func changeGameStage( _ gameStage: GameStage) {
+        model.changeGameStage(gameStage)
+    }
+    
     func raycast(location: CGPoint) {
         model.raycasting(location: location)
     }

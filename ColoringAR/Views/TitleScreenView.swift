@@ -16,6 +16,7 @@ struct TitleScreenView: View {
             Button {
                 // Code
                 arViewModel.buttonHaptic()
+                arViewModel.changeGameStage(.coloringBook)
                 
             } label: {
                 Label("Test Stage", systemImage: "testtube.2")

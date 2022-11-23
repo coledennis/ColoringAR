@@ -14,13 +14,21 @@ struct ARModel {
     var collectionOfCubes = [SIMD3(x: 0, y: 0, z: 0),SIMD3(x: 0.11, y: 0, z: 0), SIMD3(x: 0.22, y: 0.11, z: 0)]
     private(set) var arView : ARView
     
+    
     // MARK: Game Setup
+    var gameStageVar: GameStage = .menu
     var engine: CHHapticEngine?
     
     init() {
         arView = ARView(frame: .zero)
         
     }
+    
+    mutating func changeGameStage( _ newGameStage: GameStage) {
+        gameStageVar = newGameStage
+    }
+    
+    
     // detect when I tap on a SPAWNED OBJECT not part of .reality file
     
     mutating func raycasting(location: CGPoint) {

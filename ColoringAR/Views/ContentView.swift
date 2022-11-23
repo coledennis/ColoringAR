@@ -11,11 +11,18 @@ import RealityKit
 struct ContentView : View {
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
     var body: some View {
-        TitleScreenView(arViewModel: arViewModel)
-//        ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
-//            .onTapGesture(coordinateSpace: .global) { location in
-//                arViewModel.raycast(location: location)
-//            }
+        VStack {
+            switch arViewModel.currentGameStage {
+            case .tutorial: Text("Tutorial")
+            case .menu:
+                TitleScreenView(arViewModel: arViewModel)
+            case .stageSelection:
+                Text("Stage Selection")
+            case .coloringBook:
+                ColoringBookView(arViewModel: arViewModel)
+            }
+        }
+//        TitleScreenView(arViewModel: arViewModel)
     }
     
 }

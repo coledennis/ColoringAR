@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B47835DC292DAF71007CCF06 /* StageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47835DB292DAF71007CCF06 /* StageSelectionView.swift */; };
+		B47835DF292DB536007CCF06 /* ColoringBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47835DE292DB536007CCF06 /* ColoringBookView.swift */; };
 		B48A0A4A292D0D6700ABDB50 /* TitleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */; };
 		B48A0A4C292D0DB300ABDB50 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A0A4B292D0DB300ABDB50 /* GameData.swift */; };
 		B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1737292AFB4300D492D7 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		B47835DB292DAF71007CCF06 /* StageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelectionView.swift; sourceTree = "<group>"; };
+		B47835DE292DB536007CCF06 /* ColoringBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringBookView.swift; sourceTree = "<group>"; };
 		B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenView.swift; sourceTree = "<group>"; };
 		B48A0A4B292D0DB300ABDB50 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		B4CF1734292AFB4300D492D7 /* ColoringAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColoringAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,7 @@
 				B4CF1739292AFB4300D492D7 /* ContentView.swift */,
 				B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */,
 				B47835DB292DAF71007CCF06 /* StageSelectionView.swift */,
+				B47835DE292DB536007CCF06 /* ColoringBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				B4CF174A292AFB9F00D492D7 /* ARViewModel.swift in Sources */,
 				B4CF1748292AFB9900D492D7 /* ARModel.swift in Sources */,
 				B4CF173A292AFB4300D492D7 /* ContentView.swift in Sources */,
+				B47835DF292DB536007CCF06 /* ColoringBookView.swift in Sources */,
 				B47835DC292DAF71007CCF06 /* StageSelectionView.swift in Sources */,
 				B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */,
 				B48A0A4C292D0DB300ABDB50 /* GameData.swift in Sources */,
