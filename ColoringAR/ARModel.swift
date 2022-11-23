@@ -7,10 +7,15 @@
 
 import Foundation
 import RealityKit
+import SwiftUI
+import CoreHaptics
 
 struct ARModel {
     var collectionOfCubes = [SIMD3(x: 0, y: 0, z: 0),SIMD3(x: 0.11, y: 0, z: 0), SIMD3(x: 0.22, y: 0.11, z: 0)]
     private(set) var arView : ARView
+    
+    // MARK: Game Setup
+    var engine: CHHapticEngine?
     
     init() {
         arView = ARView(frame: .zero)
@@ -77,5 +82,28 @@ struct ARModel {
 //        }
         return array
     }
+    
+    // MARK: Haptic Setup
+    mutating func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
+    
+    func simpleSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
+    func buttonTapHaptic() {
+        let impactMed = UIImpactFeedbackGenerator(style: .light)
+        impactMed.impactOccurred()
+    }
+    
     
 }

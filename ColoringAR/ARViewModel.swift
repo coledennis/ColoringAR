@@ -18,4 +18,18 @@ class ARViewModel: ObservableObject {
     func raycast(location: CGPoint) {
         model.raycasting(location: location)
     }
+    
+    // MARK: Haptics
+    func simpleSuccess() {
+        model.simpleSuccess()
+    }
+    
+    func buttonHaptic() {
+        model.buttonTapHaptic()
+    }
+
+    func prepareHaptics() {
+        model.prepareHaptics()
+    }
+    
 }

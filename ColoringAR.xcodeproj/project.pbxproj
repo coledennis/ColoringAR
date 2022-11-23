@@ -46,6 +46,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B47835DD292DB254007CCF06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4CF1739292AFB4300D492D7 /* ContentView.swift */,
+				B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */,
+				B47835DB292DAF71007CCF06 /* StageSelectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B4CF172B292AFB4300D492D7 = {
 			isa = PBXGroup;
 			children = (
@@ -66,9 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CF1737292AFB4300D492D7 /* AppDelegate.swift */,
-				B4CF1739292AFB4300D492D7 /* ContentView.swift */,
-				B48A0A49292D0D6700ABDB50 /* TitleScreenView.swift */,
-				B47835DB292DAF71007CCF06 /* StageSelectionView.swift */,
+				B47835DD292DB254007CCF06 /* Views */,
 				B4CF1749292AFB9F00D492D7 /* ARViewModel.swift */,
 				B4CF1747292AFB9900D492D7 /* ARModel.swift */,
 				B4CF174B292B1AEA00D492D7 /* BoxData.swift */,

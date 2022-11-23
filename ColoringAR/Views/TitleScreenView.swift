@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct TitleScreenView: View {
+    @ObservedObject var arViewModel : ARViewModel
     var body: some View {
         VStack {
             Text("Coloring AR")
                 .font(.largeTitle).bold()
             Button {
                 // Code
+                arViewModel.buttonHaptic()
+                
             } label: {
                 Label("Test Stage", systemImage: "testtube.2")
             }
@@ -55,11 +58,14 @@ struct TitleScreenView: View {
             .buttonStyle(.bordered)
 
         }
+        .onAppear {
+            arViewModel.prepareHaptics()
+        }
     }
 }
 
 struct TitleScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleScreenView()
+        TitleScreenView(arViewModel: ARViewModel.init())
     }
 }
