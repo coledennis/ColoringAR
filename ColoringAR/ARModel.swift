@@ -18,6 +18,7 @@ struct ARModel {
     // MARK: Game Setup
     var gameStageVar: GameStage = .menu
     var engine: CHHapticEngine?
+    var experiencePlaced: Bool = false
     
     init() {
         arView = ARView(frame: .zero)
@@ -57,6 +58,7 @@ struct ARModel {
             }
             
             arView.scene.anchors.append(raycastAnchor)
+            experiencePlaced = true
         }
     }
     

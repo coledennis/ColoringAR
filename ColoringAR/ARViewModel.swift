@@ -19,6 +19,10 @@ class ARViewModel: ObservableObject {
         model.gameStageVar
     }
     
+    var experiencePlaced: Bool {
+        model.experiencePlaced
+    }
+    
     func changeGameStage( _ gameStage: GameStage) {
         model.changeGameStage(gameStage)
     }
