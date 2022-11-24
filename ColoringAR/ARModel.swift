@@ -33,6 +33,7 @@ struct ARModel {
     // detect when I tap on a SPAWNED OBJECT not part of .reality file
     
     mutating func raycasting(location: CGPoint) {
+        prepareHaptics()
         guard let query = arView.makeRaycastQuery(from: location/*arView.center*/,
                                                   allowing: .estimatedPlane,
                                                   alignment: .any)
@@ -48,17 +49,19 @@ struct ARModel {
             nearestEntity.changeColor()
             
         } else {
-            
-            let raycastAnchor = AnchorEntity(world: result.worldTransform)
-            raycastAnchor.name = "raycast anchor"
-            
-            for box in placeGridOfCubes(parent: raycastAnchor) {
-                raycastAnchor.addChild(box)
-                print("added box = \(box.transform.translation)")
+            if experiencePlaced == false {
+                let raycastAnchor = AnchorEntity(world: result.worldTransform)
+                raycastAnchor.name = "raycast anchor"
+                
+                for box in placeGridOfCubes(parent: raycastAnchor) {
+                    raycastAnchor.addChild(box)
+                    print("added box = \(box.transform.translation)")
+                }
+                
+                arView.scene.anchors.append(raycastAnchor)
+                buttonTapHaptic()
+                experiencePlaced = true
             }
-            
-            arView.scene.anchors.append(raycastAnchor)
-            experiencePlaced = true
         }
     }
     
