@@ -11,7 +11,7 @@ import SwiftUI
 import CoreHaptics
 
 struct ARModel {
-    var collectionOfCubes = [SIMD3(x: 0, y: 0, z: 0),SIMD3(x: 0.11, y: 0, z: 0), SIMD3(x: 0.22, y: 0.11, z: 0)]
+//    var collectionOfCubes = [SIMD3(x: 0, y: 0, z: 0),SIMD3(x: 0.11, y: 0, z: 0), SIMD3(x: 0.22, y: 0.11, z: 0)]
     private(set) var arView : ARView
     
     
@@ -69,12 +69,27 @@ struct ARModel {
         
         var array: Array<Entity> = []
         
+
+//        if let path = Bundle.main.path(forResource: "Torus", ofType: "json") {
+//            do {
+//                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+//                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+//                  if let collectionOfCubes = jsonResult as? JSONContent, let person = collectionOfCubes["person"] as? [Any] {
+//                            // do stuff
+//                  }
+//              } catch {
+//                   // handle error
+//              }
+//        }
+        let collectionOfCubes = loadData().content.voxels.voxel
+        
         for item in collectionOfCubes {
+            print("collection of cubes = \(collectionOfCubes.count)")
             let box = CustomBox(color: .white)
             //                        box.name = "custom box"
-            box.transform.translation.x = Float(item.x)
-            box.transform.translation.y = Float(item.y)
-            box.transform.translation.z = Float(item.z)
+            box.transform.translation.x = Float(Float(item.position.x)*0.01)
+            box.transform.translation.y = Float(Float(item.position.y)*0.01)
+            box.transform.translation.z = Float(Float(item.position.z)*0.01)
 //            box.move(to: , relativeTo: <#T##Entity?#>, duration: <#T##TimeInterval#>, timingFunction: .)
             array.append(box)
         }
@@ -118,5 +133,48 @@ struct ARModel {
         impactMed.impactOccurred()
     }
     
+ 
+    func loadData() -> Welcome {
+//        guard let url = URL(string: together
+//        ) else {
+//            print("Invalid URL")
+//            return
+//        }
+        var result: Welcome = Welcome.init(content: Content.init(dimensions: .init(width: 0, height: 0, depth: 0), voxels: Voxels(voxel: [])))
+//      private var results = [DrinkDetailsResult]()
+        print("loadData running")
+                if let path = Bundle.main.path(forResource: "snowman", ofType: "json") {
+                    do {
+                        print("test 1")
+                          let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+//                          let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                        if let decodedResponse = try? JSONDecoder().decode(Welcome.self, from: data) {
+                            result = decodedResponse
+                            print("decoded")
+                            //                results = decodedResponse.results
+//                            results = decodedResponse.drinks
+                        }
+                        print("test 2")
+//                          if let collectionOfCubes = jsonResult as? JSONContent, let person = collectionOfCubes["person"] as? [Any] {
+                                    // do stuff
+//                          }
+                      } catch {
+                           // handle error
+                      }
+                }
+        
+//        do {
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//            if let decodedResponse = try? JSONDecoder().decode(DrinkDetailsResponse.self, from: data) {
+//                //                results = decodedResponse.results
+//                results = decodedResponse.drinks
+//            }
+//
+//        } catch {
+//            print("Invalid data")
+//        }
+        return result
+    }
+
     
 }
