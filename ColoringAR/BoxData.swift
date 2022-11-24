@@ -25,4 +25,10 @@ class CustomBox: Entity, HasModel, HasCollision {
     func changeColor() {
         model?.materials =  [SimpleMaterial(color: .blue, isMetallic: false)]
     }
+    
+    func changeColor2(red: Int, green: Int, blue: Int) {
+        
+        model?.materials =  [SimpleMaterial(color: .init(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: 1), isMetallic: false)]
+
+    }
 }

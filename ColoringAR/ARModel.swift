@@ -20,9 +20,24 @@ struct ARModel {
     var engine: CHHapticEngine?
     var experiencePlaced: Bool = false
     
+    var cubeArr: Array<Entity>  = []
+    var raycastAnchor = AnchorEntity(plane: .horizontal)
+    
+    var colorArr: Array<SwiftUI.Color> = []
+    
     init() {
         arView = ARView(frame: .zero)
+        cubeArr = placeGridOfCubes(parent: raycastAnchor)
         
+//        Task {
+//            let raycastAnchor = AnchorEntity(plane: .horizontal)/
+            raycastAnchor.name = "raycast anchor"
+            
+            for box in /*placeGridOfCubes(parent: raycastAnchor)*/ cubeArr {
+                raycastAnchor.addChild(box)
+                print("added box = \(box.transform.translation)")
+            }
+//        }
     }
     
     mutating func changeGameStage( _ newGameStage: GameStage) {
@@ -46,52 +61,49 @@ struct ARModel {
         if let nearestEntity = arView.entity(at: location) as? CustomBox {
             print("tapping an existing square - \(nearestEntity.name)")
             
+            buttonTapHaptic()
             nearestEntity.changeColor()
             
         } else {
             if experiencePlaced == false {
-                let raycastAnchor = AnchorEntity(world: result.worldTransform)
-                raycastAnchor.name = "raycast anchor"
+//                let raycastAnchor = AnchorEntity(world: result.worldTransform)
+//                raycastAnchor.name = "raycast anchor"
+                print("start adding cubes")
+//                for box in /*placeGridOfCubes(parent: raycastAnchor)*/ cubeArr {
+//                    raycastAnchor.addChild(box)
+////                    print("added box = \(box.transform.translation)")
+//                }
                 
-                for box in placeGridOfCubes(parent: raycastAnchor) {
-                    raycastAnchor.addChild(box)
-                    print("added box = \(box.transform.translation)")
-                }
-                
-                arView.scene.anchors.append(raycastAnchor)
+//                
+                    arView.scene.anchors.append(raycastAnchor)
+//
+                print("end adding cubes")
                 buttonTapHaptic()
                 experiencePlaced = true
             }
         }
     }
     
-    func placeGridOfCubes(parent: AnchorEntity) -> Array<Entity> {
+    mutating func placeGridOfCubes(parent: AnchorEntity) -> Array<Entity> {
         
         var array: Array<Entity> = []
-        
 
-//        if let path = Bundle.main.path(forResource: "Torus", ofType: "json") {
-//            do {
-//                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-//                  if let collectionOfCubes = jsonResult as? JSONContent, let person = collectionOfCubes["person"] as? [Any] {
-//                            // do stuff
-//                  }
-//              } catch {
-//                   // handle error
-//              }
-//        }
         let collectionOfCubes = loadData().content.voxels.voxel
-        
+        print("collection of cubes = \(collectionOfCubes.count)")
         for item in collectionOfCubes {
-            print("collection of cubes = \(collectionOfCubes.count)")
+            
             let box = CustomBox(color: .white)
-            //                        box.name = "custom box"
             box.transform.translation.x = Float(Float(item.position.x)*0.01)
             box.transform.translation.y = Float(Float(item.position.y)*0.01)
             box.transform.translation.z = Float(Float(item.position.z)*0.01)
-//            box.move(to: , relativeTo: <#T##Entity?#>, duration: <#T##TimeInterval#>, timingFunction: .)
+            
+            box.changeColor2(red: item.color.red, green: item.color.green, blue: item.color.blue)
             array.append(box)
+            
+            let color = SwiftUI.Color(red: Double(item.color.red)/255, green: Double(item.color.green)/255, blue: Double(item.color.blue)/255)
+            if !colorArr.contains(where: {$0 == color}) {
+                colorArr.append(color)
+            }
         }
         
 //        for xnum in 1...5 {
@@ -143,7 +155,7 @@ struct ARModel {
         var result: Welcome = Welcome.init(content: Content.init(dimensions: .init(width: 0, height: 0, depth: 0), voxels: Voxels(voxel: [])))
 //      private var results = [DrinkDetailsResult]()
         print("loadData running")
-                if let path = Bundle.main.path(forResource: "snowman", ofType: "json") {
+                if let path = Bundle.main.path(forResource: "character", ofType: "json") {
                     do {
                         print("test 1")
                           let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)

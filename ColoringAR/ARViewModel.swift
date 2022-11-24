@@ -7,6 +7,7 @@
 
 import Foundation
 import RealityKit
+import SwiftUI
 
 class ARViewModel: ObservableObject {
     @Published private var model : ARModel = ARModel()
@@ -42,6 +43,10 @@ class ARViewModel: ObservableObject {
 
     func prepareHaptics() {
         model.prepareHaptics()
+    }
+    
+    var colorArr: Array<SwiftUI.Color> {
+        model.colorArr
     }
     
 }

@@ -14,6 +14,7 @@
 		B4A2EF71292F2618004E4526 /* JSON_Processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A2EF70292F2618004E4526 /* JSON_Processing.swift */; };
 		B4A2EF75292F2DA6004E4526 /* Torus.json in Resources */ = {isa = PBXBuildFile; fileRef = B4A2EF74292F2DA6004E4526 /* Torus.json */; };
 		B4A2EF77292F3125004E4526 /* snowman.json in Resources */ = {isa = PBXBuildFile; fileRef = B4A2EF76292F3125004E4526 /* snowman.json */; };
+		B4A2EF79292FACC6004E4526 /* character.json in Resources */ = {isa = PBXBuildFile; fileRef = B4A2EF78292FACC6004E4526 /* character.json */; };
 		B4CF1738292AFB4300D492D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1737292AFB4300D492D7 /* AppDelegate.swift */; };
 		B4CF173A292AFB4300D492D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CF1739292AFB4300D492D7 /* ContentView.swift */; };
 		B4CF173C292AFB4300D492D7 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = B4CF173B292AFB4300D492D7 /* Experience.rcproject */; };
@@ -32,6 +33,7 @@
 		B4A2EF70292F2618004E4526 /* JSON_Processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON_Processing.swift; sourceTree = "<group>"; };
 		B4A2EF74292F2DA6004E4526 /* Torus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Torus.json; sourceTree = "<group>"; };
 		B4A2EF76292F3125004E4526 /* snowman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowman.json; sourceTree = "<group>"; };
+		B4A2EF78292FACC6004E4526 /* character.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = character.json; sourceTree = "<group>"; };
 		B4CF1734292AFB4300D492D7 /* ColoringAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColoringAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CF1737292AFB4300D492D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4CF1739292AFB4300D492D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B4A2EF7A292FACCB004E4526 /* JSON Data */ = {
+			isa = PBXGroup;
+			children = (
+				B4A2EF74292F2DA6004E4526 /* Torus.json */,
+				B4A2EF76292F3125004E4526 /* snowman.json */,
+				B4A2EF78292FACC6004E4526 /* character.json */,
+			);
+			path = "JSON Data";
+			sourceTree = "<group>";
+		};
 		B4CF172B292AFB4300D492D7 = {
 			isa = PBXGroup;
 			children = (
@@ -91,8 +103,7 @@
 				B4A2EF70292F2618004E4526 /* JSON_Processing.swift */,
 				B4CF174B292B1AEA00D492D7 /* BoxData.swift */,
 				B48A0A4B292D0DB300ABDB50 /* GameData.swift */,
-				B4A2EF74292F2DA6004E4526 /* Torus.json */,
-				B4A2EF76292F3125004E4526 /* snowman.json */,
+				B4A2EF7A292FACCB004E4526 /* JSON Data */,
 				B4CF173B292AFB4300D492D7 /* Experience.rcproject */,
 				B4CF173D292AFB4300D492D7 /* Assets.xcassets */,
 				B4CF173F292AFB4300D492D7 /* Preview Content */,
@@ -168,6 +179,7 @@
 			files = (
 				B4CF1741292AFB4300D492D7 /* Preview Assets.xcassets in Resources */,
 				B4A2EF75292F2DA6004E4526 /* Torus.json in Resources */,
+				B4A2EF79292FACC6004E4526 /* character.json in Resources */,
 				B4CF173E292AFB4300D492D7 /* Assets.xcassets in Resources */,
 				B4A2EF77292F3125004E4526 /* snowman.json in Resources */,
 			);

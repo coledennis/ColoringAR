@@ -25,13 +25,15 @@ struct ColoringBookView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(.regularMaterial)
                             .frame(height: 100)
-                        HStack {
-                            //                        Circle().fill(.red)
-                            //                        Circle().fill(.orange)
-                            //                        Circle().fill(.yellow)
-                            //                        Circle().fill(.green)
-                            //                        Circle().fill(.blue)
-                            //                        Circle().fill(.purple)
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(arViewModel.colorArr.indices, id: \.self) { color in
+                                    
+                                    Circle()
+                                        .foregroundColor(arViewModel.colorArr[color])
+                                }
+                            }.frame(height: 80)
+//                                .padding()
                         }
                         .padding()
                     }
