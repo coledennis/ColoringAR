@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColoringBookView: View {
     @ObservedObject var arViewModel : ARViewModel
+    
     var body: some View {
         ZStack {
             ARViewContainer(arViewModel: arViewModel).edgesIgnoringSafeArea(.all)
@@ -30,7 +31,17 @@ struct ColoringBookView: View {
                                 ForEach(arViewModel.colorArr.indices, id: \.self) { color in
                                     
                                     Circle()
+//                                        .strokeBorder(.black, lineWidth: 20)
+                                        .opacity(arViewModel.currentColor == arViewModel.colorArr[color] ? 1 : 0.4)
                                         .foregroundColor(arViewModel.colorArr[color])
+                                        .onTapGesture {
+                                            arViewModel.changeCurrentColor(arViewModel.colorArr[color])
+                                        }
+//                                        .border(Circle())
+                                       
+//                                        .background(Circle().fill(.blue))
+
+                                    
                                 }
                             }.frame(height: 80)
 //                                .padding()

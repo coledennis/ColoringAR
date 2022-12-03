@@ -23,6 +23,8 @@ struct ARModel {
     var cubeArr: Array<Entity>  = []
     var raycastAnchor = AnchorEntity(plane: .horizontal)
     
+    var currentColor: SwiftUI.Color?
+    
     var colorArr: Array<SwiftUI.Color> = []
     
     init() {
@@ -44,8 +46,26 @@ struct ARModel {
         gameStageVar = newGameStage
     }
     
+    mutating func changeCurrentColor(_ newColor: SwiftUI.Color) {
+        currentColor = newColor
+        currentColorCheck()
+    }
+    
     
     // detect when I tap on a SPAWNED OBJECT not part of .reality file
+    
+    mutating func currentColorCheck() {
+        var cubeAnchor = arView.scene.anchors.first(where: {$0.name == "raycast anchor"})
+        
+        var cubesArr = cubeAnchor?.children.contains(where: {$0.name == "boxName"})
+        
+        for cube in cubeArr {
+            let cubeVar = cube as! CustomBox
+//                cubeVar.changeColor(selectedColor: currentColor ?? .red)
+            cubeVar.isSelectedColorBoxColor(selectedColor: currentColor ?? .red)
+            
+        }
+    }
     
     mutating func raycasting(location: CGPoint) {
         prepareHaptics()
@@ -62,7 +82,17 @@ struct ARModel {
             print("tapping an existing square - \(nearestEntity.name)")
             
             buttonTapHaptic()
-            nearestEntity.changeColor()
+            nearestEntity.changeColor(selectedColor: currentColor ?? .red)
+//            var cubeAnchor = arView.scene.anchors.first(where: {$0.name == "raycast anchor"})
+//
+//            var cubesArr = cubeAnchor?.children.contains(where: {$0.name == "boxName"})
+//
+//            for cube in cubeArr {
+//                let cubeVar = cube as! CustomBox
+////                cubeVar.changeColor(selectedColor: currentColor ?? .red)
+//                cubeVar.isSelectedColorBoxColor(selectedColor: currentColor ?? .red)
+//
+//            }
             
         } else {
             if experiencePlaced == false {
@@ -91,16 +121,16 @@ struct ARModel {
         let collectionOfCubes = loadData().content.voxels.voxel
         print("collection of cubes = \(collectionOfCubes.count)")
         for item in collectionOfCubes {
-            
-            let box = CustomBox(color: .white)
+            let color = SwiftUI.Color(red: Double(item.color.red)/255, green: Double(item.color.green)/255, blue: Double(item.color.blue)/255)
+            let box = CustomBox(boxTrueColor: color)
             box.transform.translation.x = Float(Float(item.position.x)*0.01)
             box.transform.translation.y = Float(Float(item.position.y)*0.01)
             box.transform.translation.z = Float(Float(item.position.z)*0.01)
             
-            box.changeColor2(red: item.color.red, green: item.color.green, blue: item.color.blue)
+//            box.changeColor2(red: item.color.red, green: item.color.green, blue: item.color.blue)
             array.append(box)
             
-            let color = SwiftUI.Color(red: Double(item.color.red)/255, green: Double(item.color.green)/255, blue: Double(item.color.blue)/255)
+            
             if !colorArr.contains(where: {$0 == color}) {
                 colorArr.append(color)
             }

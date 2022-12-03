@@ -32,6 +32,19 @@ class ARViewModel: ObservableObject {
         model.raycasting(location: location)
     }
     
+    var currentColor: SwiftUI.Color? {
+        model.currentColor
+    }
+    
+    func changeCurrentColor(_ newColor: SwiftUI.Color) {
+        model.changeCurrentColor(newColor)
+    }
+    
+    func currentColorCheck() {
+        model.currentColorCheck()
+    }
+    
+    
     // MARK: Haptics
     func simpleSuccess() {
         model.simpleSuccess()
