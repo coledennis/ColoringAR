@@ -25,6 +25,8 @@ struct TitleScreenView: View {
             
             Button {
                 // Code
+                arViewModel.buttonHaptic()
+                arViewModel.changeGameStage(.stageSelection)
             } label: {
                 Label("Stages - 0 / 100 Complete", systemImage: "list.bullet")
             }

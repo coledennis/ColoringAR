@@ -17,7 +17,8 @@ struct ContentView : View {
             case .menu:
                 TitleScreenView(arViewModel: arViewModel)
             case .stageSelection:
-                Text("Stage Selection")
+//                Text("Stage Selection")
+                StageSelectionView(arViewModel: arViewModel)
             case .coloringBook:
                 ColoringBookView(arViewModel: arViewModel)
             }
